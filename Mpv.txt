@@ -4,6 +4,14 @@ mpv /path/to/file.jpeg -> Opens image
 mpv /path/to/file.mpv -> Opens video
 mpv https://youtu.be/JHsdf74s -> Open remote youtube video
 
+HASKELL TUTORIAL PLAYLIST: https://www.youtube.com/playlist?list=PLsri1g4fxrjskpZMS10kYJG0xWrYHZ911
+FORCE IN SPECIF QUALITY: --ytdl-format="bestvideo[height<=720]+bestaudio/best[height<=720]"
+
+Next Episode in Playlist: >
+Previous Episode in Playlist: <
+Show Playlist Info: F8
+Show Video Info: F9
+
 o -> Show interface
 9-0 -> Increase or decrease volume
 Arrow or Shift+Arrow -> Jump 5, 10 or 60 seconds
