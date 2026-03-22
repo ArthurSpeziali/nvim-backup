@@ -1,0 +1,27 @@
+CMD = Ctrl + B
+
+New Tab = CMD + c
+Rename Tab = CMD + ,
+Previos Tab = CMD + p
+Next Tab = CMD + n
+
+Select Text= CMD + [
+Copy text = Space -> Enter
+Paste Text = CMD + ]
+
+Exit Tab/Session = Ctrl + D
+Pause Session = CMD + D (After tmux attach-session)
+
+Split Vertical = CMD + %
+Split Horizontal = CMD + "
+
+Switch Panel = CMD + Arrow
+Toggle Panel = CMD + o
+
+Resize pane = CMD + Ctrl + Arrows
+Auto organize = CMD + Space
+Rename Session = CMD + $
+
+tmux new -s dev
+tmux attach -t dev
+tmux ls
