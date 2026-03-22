@@ -5,9 +5,11 @@ Rename Tab = CMD + ,
 Previos Tab = CMD + p
 Next Tab = CMD + n
 
-Select Text= CMD + [
+Select Text = CMD + [
 Copy text = Space -> Enter
 Paste Text = CMD + ]
+Go to Up = CMD + [ + Crtl + u
+Go to Down = CMD + [ + Ctrl + d
 
 Exit Tab/Session = Ctrl + D
 Pause Session = CMD + D (After tmux attach-session)
