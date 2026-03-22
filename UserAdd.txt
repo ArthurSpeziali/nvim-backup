@@ -1,0 +1,2 @@
+sudo userdel nome
+sudo usermod -aG sudo nome
