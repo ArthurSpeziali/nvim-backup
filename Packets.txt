@@ -4,4 +4,4 @@ nvim
 ghcup -> curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 tmux
 mpv
-exercism
+exercism -> exercism configure --token=fc17f1fb-f812-4c60-ae16-a334896ed3d6
