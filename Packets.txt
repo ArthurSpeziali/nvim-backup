@@ -1,4 +1,4 @@
-gemini-cli
+gemini-cli -> AIzaSyDNggkfuIX2bySJL5a7W5j2cSuokK0CKlU
 links
 nvim
 ghcup -> curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
