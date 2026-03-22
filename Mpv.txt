@@ -1,0 +1,15 @@
+Works in TTY, suport files and remote videos
+
+mpv /path/to/file.jpeg -> Opens image
+mpv /path/to/file.mpv -> Opens video
+mpv https://youtu.be/JHsdf74s -> Open remote youtube video
+
+o -> Show interface
+9-0 -> Increase or decrease volume
+Arrow or Shift+Arrow -> Jump 5, 10 or 60 seconds
+m -> Mute 
+s -> Screenshot
+j -> Subtitles
+q -> Quit
+
+To get help, press "?" (Shift + /)
