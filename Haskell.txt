@@ -1,0 +1,80 @@
+Haskell, linguagem do capeta, mas compilada.
+
+-[SINTAXE]
+{Declaração}
+'funX :: Int -> Float -> String' Função. Sequencia assim: entrada -> entrada -> saída
+'varX :: Bool' Valor/Função sem parametros que é retorna booleano 
+'varX :: IO ()' IO é um Monad. Uma caixa de expressões usada para I/O e arquivos. E "()" representa o nulo
+'funX :: (Num a, Show b) => a -> b -> Bool' Limita o argumento "a" a numeros e "b" a imprimiveis    
+'main = do ...' Use "do" para usar multi-linha 
+'main = {term; term2}' Use "{}" e ";" para usar em mono-linha
+'(\x -> x * 2) 5' Cria uma lambda e usa o argumento de fora de parametro
+'let num :: Int = 5 in' Dentro de um bloco "do", devese usar let, e opcionalmente "in". Let pode ser redefinida de valor 
+'userinput <- getLine' Usasse "<-" para capturar respostas Monads, executalas e atribuir a uma variavel
+
+{Modularização}
+'module Modulao where' Declara o nome do modulo 
+'import Data.Map' Importa todas as funções do módulo
+'import qualified Data.Map' Acessa todas as funções do modulo com o mesmo nome 
+'import qualified Data.Map as Map' Abrevia com um Alias
+'import qualified Data.Map (fromList, lookup)' Acessa somente essas funções do módulo
+
+
+[MODULOS]
+'Data.Char (ord, chr)' Ver caracteres Unicode -> 'chr 99' Mostra o Char do Int, 'ord 'a'' mostra o Unicode do Char
+'Data.Fixed (Fixed E2)' Adiciona novo tipo para floats com casa fixas -> 'var :: Fixed E3' 3 Casas decimais
+'Text.Printf (printf)' Texto para formatação como putStrLn em interpolação -> '%s' para String, %d Int, %f Float. Se for IO imprime, String não
+'Data.Text' Tipo Texto novo, recomendado para strings otiomizadas -> 'Text.pack("Ola")' para converter, ou 'Text.unpack(t)' para desfazer 
+'Data.Function ((&))' Adiciona o pipe tradicional -> '"Ola" & length' passa normalmente
+
+-[EXPRESSOES]
+{Básico}
+'--' Comentários || '# ...'
+'show' Mostra versão em String do tipo || 'inspect()'
+'^' Exponenciação padrão 
+'^^' Exponenciação onde a base é decimal 
+'**' Exponenciação onde a base e o expoente são decimais 
+'++'/'<>' Concatena listas ou strings
+'length' Mostra o tamanho de lista e strings 
+'elem' Procura o objeto na lista || 'a in list'
+':' Coloca o elemento no início da lista || [a | list]
+'!!' Acessa o item X na lista || Enum.at(list, 4)
+'..' Range classico para criar listas
+
+{Monads}
+'IO' -> Entrada e saída de texto, teclado e arquivos || 'IO.*'
+'Just x' -> Valor literal em sucesso || '{:ok, value}'
+'Nothing' -> Valor de erro || ':error'
+'Maybe' -> Retorna tanto "Just" quanto "Nothing" || ':error | {:ok, value}'
+'Either' -> Retorna tanto "Right x" para sucesso, quanto "Left x" para error || '{:error, reason} | {:ok, value}'
+
+{Comparadores e Lógicos}
+'==' Igual á 
+'/=' Diferente de || 'a != b'
+'>=' Maior ou igual 
+'<=' Menor ou igual 
+'not' Not padão 
+'||' Or padrão 
+'&&' And padrão 
+'and' And para listas || Enum.all?()
+'or' Or para listas || Enum.any?()
+
+{Pipes}
+'a >== b' Passa um valor de Monad, executa para o "b"
+'a . b' Passa o terceiro parametro passado para o "b", depois passa novamente ao "a"
+'a $ b' Executa primeiro o "b", depois o "a"
+'a & b' Pipe tradicional com Data.Function, transporta de "a" à "b"
+
+
+[COMANDOS]
+'ghcup tui' Gerencia versões do stack todo
+'cabal init name' Inicia serie de perguntas para criar projeto 
+'cabal build' Compila o projeto 
+'cabal run' Compila e roda
+'cabal instal xxx' Instala pacote
+
+[EXTRA]
+"Monads são capsulas a prova de falha."
+"Não constuma usar parenteses no Haskell, a não ser para executar lambdas, juntar operações e etc..."
+"cabal build -O 2 é uma otimização extrema"
+"a função main é obrigatória, além de ter o tipo IO ()"
