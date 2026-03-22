@@ -22,7 +22,7 @@ Haskell, linguagem do capeta, mas compilada.
 
 [MODULOS]
 'Data.Char (ord, chr)' Ver caracteres Unicode -> 'chr 99' Mostra o Char do Int, 'ord 'a'' mostra o Unicode do Char
-'Data.Fixed (Fixed E2)' Adiciona novo tipo para floats com casa fixas -> 'var :: Fixed E3' 3 Casas decimais
+'Data.Fixed (Fixed, E2)' Adiciona novo tipo para floats com casa fixas -> 'var :: Fixed E3' 3 Casas decimais
 'Text.Printf (printf)' Texto para formatação como putStrLn em interpolação -> '%s' para String, %d Int, %f Float. Se for IO imprime, String não
 'Data.Text' Tipo Texto novo, recomendado para strings otiomizadas -> 'Text.pack("Ola")' para converter, ou 'Text.unpack(t)' para desfazer 
 'Data.Function ((&))' Adiciona o pipe tradicional -> '"Ola" & length' passa normalmente
@@ -31,9 +31,9 @@ Haskell, linguagem do capeta, mas compilada.
 {Básico}
 '--' Comentários || '# ...'
 'show' Mostra versão em String do tipo || 'inspect()'
-'^' Exponenciação padrão 
-'^^' Exponenciação onde a base é decimal 
-'**' Exponenciação onde a base e o expoente são decimais 
+'^' Exponenciação padrão com expoente possitivo
+'^^' Exponenciação onde a base é decimal e expoente negativo
+'**' Exponenciação onde o expoente é decimal
 '++'/'<>' Concatena listas ou strings
 'length' Mostra o tamanho de lista e strings 
 'elem' Procura o objeto na lista || 'a in list'
@@ -76,5 +76,9 @@ Haskell, linguagem do capeta, mas compilada.
 [EXTRA]
 "Monads são capsulas a prova de falha."
 "Não constuma usar parenteses no Haskell, a não ser para executar lambdas, juntar operações e etc..."
-"cabal build -O 2 é uma otimização extrema"
-"a função main é obrigatória, além de ter o tipo IO ()"
+"Cabal build -O 2 é uma otimização extrema"
+"A função main é obrigatória, além de ter o tipo IO ()"
+"Main fica em app/ e Libs em /src"
+"Colocar src/ em hs-source-dirs"
+"Colocar Libs em other-modules"
+"Obrigatorio esclarer tipos de resultados em certas funções, como realToFrac (5 :: Int) :: Double"
